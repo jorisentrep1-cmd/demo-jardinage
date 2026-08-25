@@ -41,10 +41,15 @@ nav{position:fixed;top:34px;left:0;right:0;z-index:100;height:74px;display:flex;
 .hamburger span{display:block;width:22px;height:1.5px;background:var(--text2)}
 
 /* HERO */
-#hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:108px}
+#hero{min-height:100vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;padding-top:108px}
 .hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1689728318937-17d24bc0a65c?auto=format&fit=crop&w=1800&q=80') center/cover}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,36,32,.55) 0%,rgba(43,36,32,.72) 100%)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(23,32,12,.75) 0%,rgba(23,32,12,.15) 55%,transparent 75%)}
 .hero-inner{max-width:800px;margin:0 auto;padding:4rem 2rem;text-align:center;position:relative;z-index:1;color:#fff}
+.hero-editorial{max-width:1120px;width:100%;margin:0 auto;padding:0 2rem 5rem;position:relative;z-index:1;color:#fff;text-align:left}
+.hero-editorial .hero-eyebrow{justify-content:flex-start}
+.hero-editorial .hero-sub{margin:0 0 2.25rem}
+.hero-editorial .hero-btns{justify-content:flex-start}
+@media(max-width:900px){.hero-editorial{text-align:center;padding-bottom:3rem}.hero-editorial .hero-eyebrow,.hero-editorial .hero-btns{justify-content:center}.hero-editorial .hero-sub{margin-left:auto;margin-right:auto}}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.68rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold2);margin-bottom:1.75rem}
 .hero-eyebrow::before,.hero-eyebrow::after{content:'';width:24px;height:1px;background:var(--gold2)}
 h1.hero-title{font-size:clamp(2.6rem,6vw,4.4rem);font-weight:700;line-height:1.1;margin-bottom:1.5rem;letter-spacing:-.5px}
@@ -162,13 +167,26 @@ footer{background:var(--charcoal);padding:3rem 2rem;text-align:center}
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
-  <div class="hero-inner">
+  <div class="hero-editorial">
     <div class="hero-eyebrow">Jardinage & Paysagisme · Nantes</div>
     <h1 class="hero-title">Un jardin qui vous<br/>ressemble.</h1>
     <p class="hero-sub">Entretien, création et aménagement paysager, pour particuliers et professionnels à Nantes et environs.</p>
     <div class="hero-btns">
       <a href="tel:+33240000000" class="btn-p">Demander un devis →</a>
-      <a href="#prestations" class="btn-s">Voir nos prestations</a>
+      <a href="#galerie" class="btn-s">Voir nos réalisations</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="galerie">
+  <div class="si">
+    <div class="s-tag reveal">Galerie</div>
+    <h2 class="s-title reveal">Nos réalisations.</h2>
+    <div class="gal-grid">
+      <div class="gal-item reveal"><img src="https://images.unsplash.com/photo-1689728318937-17d24bc0a65c?auto=format&fit=crop&w=900&q=80" alt="Tonte de pelouse" loading="lazy"/></div>
+      <div class="gal-item reveal"><img src="https://images.unsplash.com/photo-1734303023491-db8037a21f09?auto=format&fit=crop&w=700&q=80" alt="Entretien de jardin" loading="lazy"/></div>
+      <div class="gal-item reveal"><img src="https://images.unsplash.com/photo-1637531347055-4fa8aa80c111?auto=format&fit=crop&w=700&q=80" alt="Outils de jardinage" loading="lazy"/></div>
+      <div class="gal-item reveal"><img src="https://images.unsplash.com/photo-1601001815894-4bb6c81416d7?auto=format&fit=crop&w=700&q=80" alt="Aménagement paysager" loading="lazy"/></div>
     </div>
   </div>
 </section>
@@ -185,19 +203,6 @@ footer{background:var(--charcoal);padding:3rem 2rem;text-align:center}
       <div class="presta-row reveal"><div><div class="presta-name">Création de jardins</div><div class="presta-desc">Conception, plantation</div></div><div class="presta-price">Sur devis</div></div>
       <div class="presta-row reveal"><div><div class="presta-name">Aménagement paysager</div><div class="presta-desc">Terrasses, allées, clôtures végétales</div></div><div class="presta-price">Sur devis</div></div>
       <div class="presta-row reveal"><div><div class="presta-name">Évacuation déchets verts</div><div class="presta-desc">Débarras et recyclage</div></div><div class="presta-price">Dès 60€</div></div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="galerie">
-  <div class="si">
-    <div class="s-tag reveal">Galerie</div>
-    <h2 class="s-title reveal">Nos réalisations.</h2>
-    <div class="gal-grid">
-      <div class="gal-item reveal"><img src="https://images.unsplash.com/photo-1689728318937-17d24bc0a65c?auto=format&fit=crop&w=900&q=80" alt="Tonte de pelouse" loading="lazy"/></div>
-      <div class="gal-item reveal"><img src="https://images.unsplash.com/photo-1734303023491-db8037a21f09?auto=format&fit=crop&w=700&q=80" alt="Entretien de jardin" loading="lazy"/></div>
-      <div class="gal-item reveal"><img src="https://images.unsplash.com/photo-1637531347055-4fa8aa80c111?auto=format&fit=crop&w=700&q=80" alt="Outils de jardinage" loading="lazy"/></div>
-      <div class="gal-item reveal"><img src="https://images.unsplash.com/photo-1601001815894-4bb6c81416d7?auto=format&fit=crop&w=700&q=80" alt="Aménagement paysager" loading="lazy"/></div>
     </div>
   </div>
 </section>
