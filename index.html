@@ -3,294 +3,357 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Vert Jardin Création — Jardinage & paysagisme à Bourg-sur-Gironde</title>
-<meta name="description" content="Vert Jardin Création, jardinage et paysagisme à Bourg-sur-Gironde. Entretien, création, élagage. Devis gratuit."/>
+<title>Vert Jardin Création — Paysagiste à Bourg-sur-Gironde</title>
+<meta name="description" content="Entretien et création de jardins à Bourg-sur-Gironde. Le calendrier de l'année, mois par mois, et 50 % de crédit d'impôt sur l'entretien."/>
 <meta name="robots" content="noindex,nofollow"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
+/* ---------------------------------------------------------------
+   Un jardin en Gironde l'hiver : terre nue, lichen sur la pierre,
+   feuilles mortes. Pas le vert fluo qu'on colle sur tout ce qui
+   touche au jardinage.
+   --------------------------------------------------------------- */
 :root{
-  --charcoal:#2d5016;--charcoal2:#3d6b20;
-  --gold:#c17845;--gold-dk:#975e36;--gold2:#dead8e;
-  --blush:#ecf1e4;--cream:#f7faf4;
-  --text:#2d5016;--text2:#5f7050;--text3:#646f58;
-  --border:#e0e8d6;--white:#fff;--green:#22c55e;
-  --t:.3s cubic-bezier(.4,0,.2,1);
+  --terre:#EDE9E0;
+  --sable:#F7F4ED;
+  --sillon:#1E231B;
+  --sillon-doux:#3F4639;
+  --lichen:#5D6553;
+  --trait:#D6D0C2;
+  --seve:#4A6B22;
+  --seve-vif:#5D8430;
+  --sur-sombre:#EDE9E0;
+  --sur-sombre-doux:#9AA08F;
+  --sur-sombre-accent:#A8C46B;
+  --focus:#4A6B22;
 }
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --terre:#1E231B;
+    --sable:#262C22;
+    --sillon:#EDE9E0;
+    --sillon-doux:#CBC7BB;
+    --lichen:#979C8C;
+    --trait:#3A4134;
+    --seve:#A8C46B;
+    --seve-vif:#BBD483;
+    --sur-sombre:#262C22;
+    --sur-sombre-doux:#4E5547;
+    --sur-sombre-accent:#3E5C1C;
+    --focus:#A8C46B;
+  }
+}
+:root[data-theme="dark"]{
+  --terre:#1E231B;
+  --sable:#262C22;
+  --sillon:#EDE9E0;
+  --sillon-doux:#CBC7BB;
+  --lichen:#979C8C;
+  --trait:#3A4134;
+  --seve:#A8C46B;
+  --seve-vif:#BBD483;
+  --sur-sombre:#262C22;
+  --sur-sombre-doux:#4E5547;
+  --sur-sombre-accent:#3E5C1C;
+  --focus:#A8C46B;
+}
+
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Nunito Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
-h1,h2,h3,.serif{font-family:'Fraunces',serif}
+html{scroll-behavior:smooth;scroll-padding-top:3.6rem}
+body{background:var(--terre);color:var(--sillon-doux);font-family:'Work Sans',system-ui,sans-serif;font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.fr{font-family:'Fraunces',Georgia,serif;color:var(--sillon)}
+a{color:var(--seve)}
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
+img{max-width:100%;display:block}
+.env{max-width:1020px;margin:0 auto;padding-inline:1.5rem}
 
-/* DEMO RIBBON */
-.demo-ribbon{position:fixed;top:0;left:0;right:0;z-index:200;background:#0f2044;color:#fff;padding:.55rem 1rem;text-align:center;font-size:.72rem;font-weight:600;display:flex;align-items:center;justify-content:center;gap:.6rem;flex-wrap:wrap}
-.demo-ribbon a{color:#f08020;text-decoration:none;font-weight:700}
-.demo-ribbon a:hover{text-decoration:underline}
-.demo-badge{background:#f08020;color:#1a1a1a;font-size:.6rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:.15rem .55rem;border-radius:100px}
+.demo{background:var(--sillon);color:var(--sur-sombre);padding:.5rem 1rem;text-align:center;font-size:.74rem}
+.demo a{color:var(--sur-sombre-accent);font-weight:600}
+.demo b{color:var(--sur-sombre)}
 
-/* NAV */
-nav{position:fixed;top:34px;left:0;right:0;z-index:100;height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;background:rgba(250,246,242,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);transition:top var(--t)}
-.n-logo{display:flex;align-items:center;gap:.7rem;text-decoration:none}
-.n-mark{width:38px;height:38px;flex-shrink:0}
-.n-name{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:700;color:var(--charcoal);letter-spacing:.3px}
-.n-links{display:flex;list-style:none;align-items:center;gap:.3rem}
-.n-links a{padding:.5rem 1rem;font-size:.8rem;font-weight:600;color:var(--text2);text-decoration:none;transition:color var(--t)}
-.n-links a:hover{color:var(--charcoal)}
-.n-cta{background:var(--charcoal)!important;color:#fff!important;padding:.6rem 1.4rem!important;border-radius:100px;transition:background var(--t)!important}
-.n-cta:hover{background:var(--gold)!important;color:#fff!important}
-.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
-.hamburger span{display:block;width:22px;height:1.5px;background:var(--text2)}
+.barre{position:sticky;top:0;z-index:20;background:var(--terre);border-bottom:1px solid var(--trait)}
+.b-in{display:flex;align-items:center;gap:1.5rem;min-height:3.05rem}
+.b-marque{font-family:'Fraunces',serif;font-weight:600;font-size:1.1rem;color:var(--sillon);text-decoration:none;flex-shrink:0}
+.b-liens{display:flex;gap:1.4rem;margin-left:auto}
+.b-liens a{font-size:.82rem;font-weight:500;color:var(--sillon-doux);text-decoration:none;padding-block:.2rem;border-bottom:2px solid transparent}
+.b-liens a:hover{color:var(--sillon);border-bottom-color:var(--seve)}
+.b-tel{font-size:.86rem;font-weight:600;background:var(--seve);color:var(--sable);text-decoration:none;padding:.44rem 1rem;flex-shrink:0;white-space:nowrap;border-radius:99px}
+.b-tel:hover{background:var(--sillon)}
+.b-court{display:none}
+@media(max-width:840px){.b-liens{display:none}.b-tel{margin-left:auto}.b-long{display:none}.b-court{display:inline}}
 
-/* HERO */
-#hero{min-height:100vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;padding-top:108px}
-.hero-bg{position:absolute;inset:0;background:url('/img/unsplash-photo-1689728318937-17d24bc0a65c.jpg') center/cover}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(23,32,12,.75) 0%,rgba(23,32,12,.15) 55%,transparent 75%)}
-.hero-inner{max-width:800px;margin:0 auto;padding:4rem 2rem;text-align:center;position:relative;z-index:1;color:#fff}
-.hero-editorial{max-width:1120px;width:100%;margin:0 auto;padding:0 2rem 5rem;position:relative;z-index:1;color:#fff;text-align:left}
-.hero-editorial .hero-eyebrow{justify-content:flex-start}
-.hero-editorial .hero-sub{margin:0 0 2.25rem}
-.hero-editorial .hero-btns{justify-content:flex-start}
-@media(max-width:900px){.hero-editorial{text-align:center;padding-bottom:3rem}.hero-editorial .hero-eyebrow,.hero-editorial .hero-btns{justify-content:center}.hero-editorial .hero-sub{margin-left:auto;margin-right:auto}}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.68rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold2);margin-bottom:1.75rem}
-.hero-eyebrow::before,.hero-eyebrow::after{content:'';width:24px;height:1px;background:var(--gold2)}
-h1.hero-title{font-size:clamp(2.6rem,6vw,4.4rem);font-weight:700;line-height:1.1;margin-bottom:1.5rem;letter-spacing:-.5px}
-.hero-sub{font-size:1.05rem;color:rgba(255,255,255,.8);max-width:480px;margin:0 auto 2.75rem;line-height:1.8;font-weight:400}
-.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.btn-p{background:var(--gold);color:#141414;border:none;padding:1rem 2.2rem;font-family:'Nunito Sans',sans-serif;font-size:.85rem;font-weight:700;cursor:pointer;transition:all var(--t);text-decoration:none;display:inline-flex;align-items:center;gap:.6rem;border-radius:24px 8px 24px 8px}
-.btn-p:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 14px 30px rgba(176,141,87,.35)}
-.btn-s{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4);padding:1rem 2.2rem;font-family:'Nunito Sans',sans-serif;font-size:.85rem;font-weight:600;cursor:pointer;transition:all var(--t);text-decoration:none;display:inline-block;border-radius:24px 8px 24px 8px}
-.btn-s:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+header{padding-block:3rem 2.3rem;border-bottom:1px solid var(--trait)}
+.titre{font-size:clamp(2.3rem,6.2vw,3.9rem);font-weight:600;line-height:1.02;letter-spacing:-.015em}
+.titre em{font-style:italic;color:var(--seve);font-weight:400}
+.accroche{margin-top:1rem;font-size:1.04rem;max-width:50ch}
+.ident{margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.3rem 1.5rem;font-size:.89rem}
+.ident b{color:var(--sillon);font-weight:600}
 
-/* SECTIONS */
-.section{padding:7rem 2rem}
-.si{max-width:1120px;margin:0 auto}
-.s-tag{display:inline-flex;align-items:center;gap:.6rem;font-size:.66rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dk);margin-bottom:1rem}
-.s-tag::before{content:'';width:24px;height:1px;background:var(--gold)}
-.s-title{font-size:clamp(2rem,3.8vw,3rem);font-weight:700;color:var(--charcoal);letter-spacing:-.5px;line-height:1.15;margin-bottom:1.25rem}
-.s-sub{font-size:.95rem;color:var(--text2);line-height:1.85;max-width:560px}
-.center{text-align:center;margin-left:auto;margin-right:auto}
+.ouverture{padding-block:2.9rem;border-bottom:1px solid var(--trait);background:var(--sable)}
+.ouverture p{font-family:'Fraunces',serif;font-size:clamp(1.4rem,3.4vw,2.05rem);font-weight:400;line-height:1.3;color:var(--sillon);max-width:26ch}
+.ouverture .suite{font-family:'Work Sans',sans-serif;font-size:1rem;line-height:1.62;color:var(--sillon-doux);max-width:58ch;margin-top:1.1rem}
 
-/* PRESTATIONS */
-#prestations{background:var(--white)}
-.presta-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:4rem}
-.presta-row{display:flex;justify-content:space-between;align-items:center;padding:1.4rem 1.75rem;background:var(--cream);border:1px solid var(--border);border-radius:20px 6px 20px 6px;transition:all var(--t)}
-.presta-row:hover{border-color:var(--gold);box-shadow:0 10px 30px rgba(176,141,87,.1)}
-.presta-name{font-size:.95rem;font-weight:600;color:var(--charcoal)}
-.presta-desc{font-size:.76rem;color:var(--text3);margin-top:.3rem}
-.presta-price{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:700;color:var(--gold-dk);white-space:nowrap;margin-left:1.5rem}.presta-note{font-size:.76rem;color:var(--text3);line-height:1.6;margin-top:1.5rem;max-width:760px}
+.sect{padding-block:3.3rem}
+.sect + .sect{border-top:1px solid var(--trait)}
+.etiq{font-size:.7rem;font-weight:600;letter-spacing:.19em;text-transform:uppercase;color:var(--seve);margin-bottom:.5rem}
+h2{font-size:clamp(1.75rem,4.2vw,2.5rem);font-weight:600;line-height:1.08}
+.intro{margin-top:.6rem;max-width:58ch}
 
-/* GALERIE */
-#galerie{background:var(--blush)}
-.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:4rem}
-.gal-item{aspect-ratio:3/4;border-radius:22px 6px 22px 6px;overflow:hidden;position:relative}
-.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;display:block}
-.gal-item:hover img{transform:scale(1.08)}
-.gal-item:first-child{grid-row:span 2;aspect-ratio:auto}
+/* --- l'année --- */
+.annee{margin-top:2.1rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--trait);border:1px solid var(--trait)}
+.mois{background:var(--terre);padding:1.15rem 1.1rem}
+.mois.fort{background:var(--sable)}
+.m-nom{font-family:'Fraunces',serif;font-size:1.22rem;font-weight:600;color:var(--sillon);line-height:1}
+.m-nom small{display:block;font-family:'Work Sans',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--seve);margin-top:.3rem}
+.m-txt{margin-top:.6rem;font-size:.9rem;line-height:1.5}
+.m-rien{color:var(--lichen);font-style:italic}
+.annee-pied{margin-top:1.2rem;font-size:.94rem;color:var(--lichen);max-width:60ch}
 
-/* AVIS DEMO */
-#avis{background:var(--charcoal);color:#fff;position:relative;overflow:hidden}
-.avis-glow{position:absolute;top:-20%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(176,141,87,.18) 0%,transparent 65%)}
-#avis .s-tag{color:var(--gold2)}
-#avis .s-title{color:#fff}
-#avis .s-sub{color:rgba(255,255,255,.6)}
-.avis-demo{max-width:520px;margin:3.5rem auto 0;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:2.5rem;text-align:center;position:relative;z-index:1}
-.avis-q{font-size:1rem;font-weight:600;margin-bottom:1.5rem}
-.avis-stars{display:flex;justify-content:center;gap:.5rem;margin-bottom:1.75rem}
-.avis-star{font-size:2rem;cursor:pointer;color:rgba(255,255,255,.25);transition:all .15s ease;line-height:1}
-.avis-star:hover,.avis-star.hovered{color:var(--gold2);transform:scale(1.15)}
-.avis-result{display:none;font-size:.82rem;line-height:1.7;padding:1.25rem;border-radius:10px;text-align:left}
-.avis-result.show{display:block}
-.avis-result.positive{background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.3);color:#86efac}
-.avis-result.negative{background:rgba(240,128,32,.12);border:1px solid rgba(240,128,32,.3);color:#f0d8bd}
-.avis-hint{font-size:.72rem;color:rgba(255,255,255,.4);margin-top:1.25rem}
+/* --- tarifs --- */
+.tarifs{margin-top:2rem;border-top:2px solid var(--sillon)}
+.tar{display:grid;grid-template-columns:1fr auto;gap:.15rem 1.4rem;padding-block:1.1rem;border-bottom:1px solid var(--trait);align-items:baseline}
+.t-nom{font-family:'Fraunces',serif;font-size:1.22rem;font-weight:600;color:var(--sillon)}
+.t-det{display:block;font-family:'Work Sans',sans-serif;font-size:.87rem;color:var(--lichen);margin-top:.15rem}
+.t-prix{font-family:'Fraunces',serif;font-size:1.22rem;font-weight:600;color:var(--sillon);text-align:right}
+.impot{margin-top:1.6rem;background:var(--sable);border-left:3px solid var(--seve);padding:1.2rem 1.3rem}
+.impot h3{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:600;color:var(--sillon)}
+.impot p{margin-top:.45rem;font-size:.97rem;max-width:56ch}
+.impot b{color:var(--sillon);font-weight:600}
 
-/* HORAIRES / CONTACT */
-#contact{background:var(--white)}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:4rem;align-items:start}
-.horaire-list{display:flex;flex-direction:column;gap:0}
-.horaire-row{display:flex;justify-content:space-between;padding:.9rem 0;border-bottom:1px solid var(--border);font-size:.85rem}
-.horaire-day{font-weight:600;color:var(--charcoal)}
-.horaire-time{color:var(--text2)}
-.contact-card{background:var(--cream);border:1px solid var(--border);border-radius:14px;padding:2rem}
-.contact-item{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.5rem}
-.contact-item:last-child{margin-bottom:0}
-.contact-icon{width:38px;height:38px;background:var(--charcoal);color:var(--gold2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;line-height:0}
-.ci-svg{width:17px;height:17px}
-.contact-label{font-size:.68rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3);font-weight:700;margin-bottom:.25rem}
-.contact-value{font-size:.9rem;color:var(--charcoal);font-weight:600}
+.vue{background:var(--sillon)}
+.vue img{width:100%;height:clamp(220px,36vw,390px);object-fit:cover}
+.vue figcaption{font-size:.78rem;color:var(--sur-sombre-doux);padding:.6rem 1.5rem;max-width:1020px;margin:0 auto}
 
-/* FOOTER */
-footer{background:var(--charcoal);padding:3rem 2rem;text-align:center}
-.footer-note{font-size:.75rem;color:rgba(255,255,255,.4);line-height:1.8}
-.footer-note a{color:var(--gold2);text-decoration:none;font-weight:600}
-.footer-note a:hover{text-decoration:underline}
+/* --- déchets --- */
+.deux{display:grid;grid-template-columns:1fr 1fr;gap:2.4rem;margin-top:2rem}
+.bloc h3{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:600;color:var(--sillon)}
+.bloc p{margin-top:.5rem;font-size:.97rem}
+.bloc ul{list-style:none;margin-top:.7rem}
+.bloc li{padding-left:1.4rem;position:relative;margin-bottom:.45rem;font-size:.96rem}
+.bloc li::before{content:'';position:absolute;left:0;top:.6em;width:.65rem;height:2px;background:var(--seve)}
 
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
-.reveal.v{opacity:1;transform:translateY(0)}
+.qa{border-top:1px solid var(--trait);padding-block:1.25rem}
+.qa:last-of-type{border-bottom:1px solid var(--trait)}
+.qa dt{font-family:'Fraunces',serif;font-size:1.22rem;font-weight:600;color:var(--sillon)}
+.qa dd{margin-top:.25rem;max-width:58ch;font-size:.97rem}
 
-@media(max-width:900px){
-  nav{padding:0 1.5rem}
-  .n-links{display:none}
-  .n-links.open{display:flex;flex-direction:column;position:fixed;top:108px;left:0;right:0;background:var(--cream);padding:1.5rem;border-bottom:1px solid var(--border)}
-  .hamburger{display:flex}
-  .presta-grid,.contact-grid{grid-template-columns:1fr}
-  .gal-grid{grid-template-columns:repeat(2,1fr)}
-  .gal-item:first-child{grid-row:span 1;aspect-ratio:3/4}
-  .section{padding:5rem 1.5rem}
+.avis{display:grid;grid-template-columns:auto 1fr;gap:2.2rem;align-items:center;margin-top:1.8rem}
+.note{padding-right:2.2rem;border-right:1px solid var(--trait)}
+.note b{font-family:'Fraunces',serif;font-size:3.7rem;font-weight:600;color:var(--sillon);line-height:.85;display:block}
+.note .et{color:var(--seve);letter-spacing:.14em;margin-top:.3rem}
+.note span{display:block;font-size:.76rem;color:var(--lichen);letter-spacing:.06em;margin-top:.4rem}
+
+.contact{background:var(--sillon);color:var(--sur-sombre);padding-block:3.3rem}
+.contact h2{color:var(--sur-sombre)}
+.contact .etiq{color:var(--sur-sombre-accent)}
+.c-grille{display:grid;grid-template-columns:1fr 1fr;gap:2.6rem;margin-top:1.8rem}
+.c-tel{font-family:'Fraunces',serif;font-size:2.3rem;font-weight:600;color:var(--sur-sombre);text-decoration:none;line-height:1}
+.c-tel:hover{color:var(--sur-sombre-accent)}
+.c-note{margin-top:.8rem;color:var(--sur-sombre-doux);max-width:38ch;font-size:.96rem}
+.zone b{color:var(--sur-sombre);font-weight:600}
+.zone{font-size:.96rem;color:var(--sur-sombre-doux)}
+.zone div{padding-block:.3rem;border-bottom:1px solid var(--sur-sombre-doux);max-width:26rem}
+.zone div:last-child{border-bottom:0}
+
+footer{background:var(--sillon);color:var(--sur-sombre-doux);font-size:.78rem;padding-block:1.5rem 2.2rem;border-top:1px solid var(--sur-sombre-doux)}
+footer a{color:var(--sur-sombre-accent)}
+
+@media(max-width:860px){.annee{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){
+  .annee{grid-template-columns:1fr}
+  .deux,.c-grille{grid-template-columns:1fr;gap:1.8rem}
+  .avis{grid-template-columns:1fr;gap:1.1rem}
+  .note{padding-right:0;border-right:0;border-bottom:1px solid var(--trait);padding-bottom:1rem}
 }
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
 
-<div class="demo-ribbon">
-  <span class="demo-badge">Exemple</span>
-  Ce site est une démonstration fictive réalisée par NovaSpot — <a href="https://novaspot.fr" target="_blank">voir novaspot.fr →</a>
-</div>
+<div class="demo"><b>Exemple</b> — site de démonstration réalisé par NovaSpot · <a href="https://novaspot.fr" target="_blank" rel="noopener">novaspot.fr</a></div>
 
-<nav id="nav">
-  <a class="n-logo" href="#hero">
-    <svg class="n-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="20" cy="20" r="19" fill="#2d5016"/>
-      <circle cx="20" cy="20" r="19" fill="none" stroke="#c17845" stroke-width="1"/>
-      <text x="20" y="27" font-family="Fraunces, serif" font-size="17" font-weight="600" fill="#d4936a" text-anchor="middle">VJ</text>
-    </svg>
-    <span class="n-name">Vert Jardin Création</span>
-  </a>
-  <ul class="n-links" id="nLinks">
-    <li><a href="#prestations">Prestations</a></li>
-    <li><a href="#galerie">Galerie</a></li>
-    <li><a href="#avis">Avis</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="tel:+33240000000" class="n-cta">Demander un devis</a></li>
-  </ul>
-  <button class="hamburger" id="burger"><span></span><span></span><span></span></button>
+<nav class="barre" aria-label="Accès rapide">
+  <div class="env b-in">
+    <a class="b-marque" href="#haut">Vert Jardin Création</a>
+    <div class="b-liens">
+      <a href="#annee">L'année</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#dechets">Les déchets verts</a>
+      <a href="#questions">Questions</a>
+    </div>
+    <a class="b-tel" href="tel:+33557000003"><span class="b-long">05 57 00 00 03</span><span class="b-court">Appeler</span></a>
+  </div>
 </nav>
 
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-editorial">
-    <div class="hero-eyebrow">Jardinage & Paysagisme · Bourg-sur-Gironde</div>
-    <h1 class="hero-title">Un jardin qui vous<br/>ressemble.</h1>
-    <p class="hero-sub">Entretien, création et aménagement paysager, pour particuliers et professionnels à Bourg-sur-Gironde et environs.</p>
-    <div class="hero-btns">
-      <a href="tel:+33240000000" class="btn-p">Demander un devis →</a>
-      <a href="#galerie" class="btn-s">Voir nos réalisations</a>
+<header id="haut">
+  <div class="env">
+    <h1 class="titre">Un jardin, ça ne se travaille pas<br/><em>douze mois sur douze.</em></h1>
+    <p class="accroche">Sept ou huit passages dans l'année suffisent pour la plupart des terrains. Voilà lesquels, et à quel moment.</p>
+    <div class="ident">
+      <span><b>Vert Jardin Création</b></span>
+      <span>22 chemin des Vergers, Bourg-sur-Gironde</span>
+      <span>Entretien · Création · Élagage</span>
+    </div>
+  </div>
+</header>
+
+<section class="ouverture">
+  <div class="env">
+    <p>On ne vend pas d'abonnement mensuel pour venir tondre en janvier.</p>
+    <p class="suite">L'herbe ne pousse pas de novembre à mars. Beaucoup de contrats d'entretien font payer douze mensualités pour huit interventions réelles — ça revient au même, sauf que vous ne savez pas ce que vous payez. Ici, vous payez les passages qui ont lieu, et vous savez d'avance lesquels.</p>
+  </div>
+</section>
+
+<section class="sect" id="annee">
+  <div class="env">
+    <div class="etiq">Le calendrier</div>
+    <h2>Ce qu'on fait chez vous, mois par mois</h2>
+    <p class="intro">Établi pour un terrain classique du Blayais : pelouse, quelques haies, des arbres fruitiers. Le vôtre peut décaler d'un mois selon l'exposition.</p>
+
+    <div class="annee">
+      <div class="mois fort"><div class="m-nom">Janvier<small>Un passage</small></div><p class="m-txt">Taille des arbres fruitiers, à sève descendante. C'est le seul mois où on peut le faire sans abîmer l'arbre.</p></div>
+      <div class="mois fort"><div class="m-nom">Février<small>Un passage</small></div><p class="m-txt">Taille des haies avant la nidification, et broyage des tailles d'hiver. Après mars, c'est interdit tant que les oiseaux nichent.</p></div>
+      <div class="mois"><div class="m-nom">Mars<small>Sur demande</small></div><p class="m-txt m-rien">Scarification si la mousse a pris. Sinon, on ne vient pas.</p></div>
+      <div class="mois fort"><div class="m-nom">Avril<small>Début des tontes</small></div><p class="m-txt">Première tonte, réglée haut pour ne pas brûler l'herbe. Puis toutes les trois semaines.</p></div>
+      <div class="mois fort"><div class="m-nom">Mai<small>Deux passages</small></div><p class="m-txt">C'est le mois où tout pousse d'un coup. Tonte, désherbage des massifs, premier passage sur les haies à croissance rapide.</p></div>
+      <div class="mois fort"><div class="m-nom">Juin<small>Deux passages</small></div><p class="m-txt">Tonte, taille des haies de printemps une fois les oiseaux partis, arrosage des plantations récentes si l'été démarre sec.</p></div>
+      <div class="mois"><div class="m-nom">Juillet<small>Un passage</small></div><p class="m-txt">L'herbe ralentit avec la chaleur. On tond plus haut et moins souvent — une pelouse rase en juillet grille.</p></div>
+      <div class="mois"><div class="m-nom">Août<small>Sur demande</small></div><p class="m-txt m-rien">Souvent rien à faire. On passe si vous partez en vacances et que ça vous arrange.</p></div>
+      <div class="mois fort"><div class="m-nom">Septembre<small>Un passage</small></div><p class="m-txt">Reprise de la pousse après les pluies. Tonte, et c'est le bon moment pour semer si la pelouse est fatiguée.</p></div>
+      <div class="mois fort"><div class="m-nom">Octobre<small>Un passage</small></div><p class="m-txt">Dernière tonte, ramassage des feuilles, plantation des arbustes — la terre est encore chaude, les racines s'installent avant l'hiver.</p></div>
+      <div class="mois"><div class="m-nom">Novembre<small>Sur demande</small></div><p class="m-txt m-rien">Ramassage des feuilles si vous avez des chênes. Sinon rien.</p></div>
+      <div class="mois"><div class="m-nom">Décembre<small>Repos</small></div><p class="m-txt m-rien">On ne vient pas. C'est le mois où on prépare les devis de création pour le printemps.</p></div>
+    </div>
+    <p class="annee-pied">Soit huit à dix passages selon le terrain. On cale les dates en début d'année et on vous prévient la veille de chaque intervention.</p>
+  </div>
+</section>
+
+<figure class="vue">
+  <img src="/img/unsplash-photo-1601001815894-4bb6c81416d7.jpg" alt="Jardin entretenu"/>
+  <figcaption>Entretien à l'année, Bourg-sur-Gironde — pelouse, haies de charmille et fruitiers.</figcaption>
+</figure>
+
+<section class="sect" id="tarifs">
+  <div class="env">
+    <div class="etiq">Tarifs</div>
+    <h2>Ce que coûte chaque passage</h2>
+    <p class="intro">Prix TTC. Pour l'entretien régulier, la moitié vous revient en crédit d'impôt — voir plus bas.</p>
+
+    <div class="tarifs">
+      <div class="tar"><div><span class="t-nom">Tonte &amp; entretien</span><span class="t-det">Tonte, bordures, soufflage des allées</span></div><div class="t-prix">dès 45 €</div></div>
+      <div class="tar"><div><span class="t-nom">Taille de haies</span><span class="t-det">Au mètre linéaire, évacuation comprise</span></div><div class="t-prix">dès 6 €/ml</div></div>
+      <div class="tar"><div><span class="t-nom">Élagage</span><span class="t-det">Par arbre, selon hauteur et accès</span></div><div class="t-prix">dès 150 €</div></div>
+      <div class="tar"><div><span class="t-nom">Ramassage des feuilles</span><span class="t-det">Terrain jusqu'à 1 000 m²</span></div><div class="t-prix">dès 60 €</div></div>
+      <div class="tar"><div><span class="t-nom">Création, aménagement</span><span class="t-det">Terrasse, allée, massif, clôture végétale</span></div><div class="t-prix">sur devis</div></div>
+    </div>
+
+    <div class="impot">
+      <h3>50 % de crédit d'impôt sur l'entretien</h3>
+      <p>Entreprise déclarée services à la personne. Sur les petits travaux de jardinage à domicile, <b>la moitié de ce que vous payez vous est rendue</b>, dans la limite de 5 000 € de dépenses par an et par foyer. Une tonte à 45 € vous coûte donc 22,50 €.</p>
+      <p>Attention : ça ne vaut que pour l'entretien. La création d'un jardin ou la pose d'une terrasse n'y ouvrent pas droit, et on vous le dit au moment du devis plutôt qu'à la déclaration.</p>
     </div>
   </div>
 </section>
 
-<section class="section" id="galerie">
-  <div class="si">
-    <div class="s-tag reveal">Galerie</div>
-    <h2 class="s-title reveal">Nos réalisations.</h2>
-    <div class="gal-grid">
-      <div class="gal-item reveal"><img src="/img/unsplash-photo-1689728318937-17d24bc0a65c.jpg" alt="Tonte de pelouse" loading="lazy"/></div>
-      <div class="gal-item reveal"><img src="/img/unsplash-photo-1734303023491-db8037a21f09.jpg" alt="Entretien de jardin" loading="lazy"/></div>
-      <div class="gal-item reveal"><img src="/img/unsplash-photo-1637531347055-4fa8aa80c111.jpg" alt="Outils de jardinage" loading="lazy"/></div>
-      <div class="gal-item reveal"><img src="/img/unsplash-photo-1601001815894-4bb6c81416d7.jpg" alt="Aménagement paysager" loading="lazy"/></div>
-    </div>
-  </div>
-</section>
+<section class="sect" id="dechets">
+  <div class="env">
+    <div class="etiq">Après le passage</div>
+    <h2>Ce qu'on emporte, ce qu'on laisse</h2>
 
-<section class="section" id="prestations">
-  <div class="si">
-    <div class="s-tag reveal">Nos prestations</div>
-    <h2 class="s-title reveal">De la tonte<br/>à l’aménagement.</h2>
-    <p class="s-sub reveal">Des méthodes respectueuses de l'environnement, un matériel professionnel, une équipe passionnée.</p>
-    <div class="presta-grid">
-      <div class="presta-row reveal"><div><div class="presta-name">Tonte & entretien pelouse</div><div class="presta-desc">Passage régulier ou ponctuel</div></div><div class="presta-price">Dès 45€</div></div>
-      <div class="presta-row reveal"><div><div class="presta-name">Taille de haies</div><div class="presta-desc">Haies, arbustes, arbres fruitiers</div></div><div class="presta-price">Dès 6€/ml</div></div>
-      <div class="presta-row reveal"><div><div class="presta-name">Élagage</div><div class="presta-desc">Sécurisation, mise en forme</div></div><div class="presta-price">Dès 150€/arbre</div></div>
-      <div class="presta-row reveal"><div><div class="presta-name">Création de jardins</div><div class="presta-desc">Conception, plantation</div></div><div class="presta-price">Sur devis</div></div>
-      <div class="presta-row reveal"><div><div class="presta-name">Aménagement paysager</div><div class="presta-desc">Terrasses, allées, clôtures végétales</div></div><div class="presta-price">Sur devis</div></div>
-      <div class="presta-row reveal"><div><div class="presta-name">Évacuation déchets verts</div><div class="presta-desc">Débarras et recyclage</div></div><div class="presta-price">Dès 60€</div></div>
-    </div>
-    <p class="presta-note reveal">Tarifs TTC. Entreprise déclarée services à la personne : 50 % de crédit d’impôt sur l’entretien de jardin, dans la limite de 5 000 € de dépenses par an et par foyer.</p>
-  </div>
-</section>
-
-<section class="section" id="avis">
-  <div class="avis-glow"></div>
-  <div class="si center">
-    <div class="s-tag reveal center" style="justify-content:center">Fonctionnalité NovaSpot</div>
-    <h2 class="s-title reveal center">Comment vos clients<br/>laissent un avis.</h2>
-    <p class="s-sub reveal center">Ceci est une démo interactive du widget avis intégré à chaque site NovaSpot. Cliquez sur une étoile pour voir le comportement.</p>
-    <div class="avis-demo reveal">
-      <div class="avis-q">Comment s'est passée votre visite ?</div>
-      <div class="avis-stars" id="avisStars">
-        <span class="avis-star" data-v="1">★</span>
-        <span class="avis-star" data-v="2">★</span>
-        <span class="avis-star" data-v="3">★</span>
-        <span class="avis-star" data-v="4">★</span>
-        <span class="avis-star" data-v="5">★</span>
+    <div class="deux">
+      <div class="bloc">
+        <h3>On emporte</h3>
+        <ul>
+          <li>Les tailles de haies et les branches d'élagage</li>
+          <li>Les feuilles ramassées</li>
+          <li>Les souches et les déchets de débroussaillage</li>
+        </ul>
+        <p>Tout part à la déchèterie de Saint-André ou au broyeur. C'est compris dans le prix, vous n'avez pas de remorque à charger le dimanche.</p>
       </div>
-      <div class="avis-result positive" id="avisPositive">✓ Le lien pour déposer l'avis sur Google s'affiche en un clic. C'est ce qui fait vraiment grimper le nombre d'avis.</div>
-      <div class="avis-result negative" id="avisNegative">✓ Le lien Google reste proposé <strong>à l'identique</strong> — personne n'est jamais bloqué.<br/>✉ En plus, un canal privé s'ouvre vers le gérant : il est prévenu tout de suite et peut rappeler le client pour rattraper le coup.</div>
-      <div class="avis-hint">Widget identique sur tous les sites NovaSpot, accessible via QR code en boutique.<br/>Le lien Google est proposé à tout le monde, quelle que soit la note.</div>
+      <div class="bloc">
+        <h3>On laisse</h3>
+        <ul>
+          <li>La tonte, si vous avez un composteur</li>
+          <li>Le broyat, qui fait un très bon paillage</li>
+          <li>Le bois de chauffage, coupé et rangé si vous le demandez</li>
+        </ul>
+        <p>Dites-le au premier passage : beaucoup de gens ne savent pas qu'on peut leur laisser le broyat, et ça évite d'acheter du paillage en jardinerie.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="contact">
-  <div class="si">
-    <div class="s-tag reveal">Infos pratiques</div>
-    <h2 class="s-title reveal">Horaires & contact.</h2>
-    <div class="contact-grid">
-      <div class="reveal-l">
-        <div class="horaire-list">
-          <div class="horaire-row"><div class="horaire-day">Lundi — Vendredi</div><div class="horaire-time">7h30 – 18h30</div></div>
-          <div class="horaire-row"><div class="horaire-day">Samedi</div><div class="horaire-time">8h00 – 13h00</div></div>
-          <div class="horaire-row"><div class="horaire-day">Dimanche</div><div class="horaire-time">Fermé</div></div>
-        </div>
+<section class="sect" id="questions">
+  <div class="env">
+    <div class="etiq">Questions</div>
+    <h2>Ce qu'on nous demande</h2>
+    <dl>
+      <div class="qa">
+        <dt>« Il faut que je sois là ? »</dt>
+        <dd>Non, sauf au premier passage pour qu'on se mette d'accord sur ce que vous voulez garder. Ensuite on vient même si vous travaillez — on vous envoie une photo une fois fini.</dd>
       </div>
-      <div class="contact-card reveal-r">
-        <div class="contact-item">
-          <div class="contact-icon"><svg class="ci-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
-          <div><div class="contact-label">Adresse</div><div class="contact-value">22 chemin des Vergers, 33710 Bourg-sur-Gironde</div></div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon"><svg class="ci-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3h3l1.5 4.5-2 1.3a12 12 0 0 0 5.2 5.2l1.3-2L20 13.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4 6.2 2 2 0 0 1 6.5 3z"/></svg></div>
-          <div><div class="contact-label">Téléphone</div><div class="contact-value">05 57 00 00 00</div></div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon"><svg class="ci-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></div>
-          <div><div class="contact-label">Email</div><div class="contact-value">contact@vert-jardin-demo.fr</div></div>
-        </div>
+      <div class="qa">
+        <dt>« Vous pouvez venir juste une fois ? »</dt>
+        <dd>Oui. Pas d'engagement, pas de contrat annuel. Beaucoup de gens nous appellent une fois par an pour la taille des haies, et c'est très bien comme ça.</dd>
+      </div>
+      <div class="qa">
+        <dt>« Et s'il pleut le jour prévu ? »</dt>
+        <dd>On décale, et on vous prévient la veille au soir. Tondre une pelouse détrempée l'abîme et laisse des ornières — ça ne sert à personne.</dd>
+      </div>
+      <div class="qa">
+        <dt>« Vous faites l'abattage d'un gros arbre ? »</dt>
+        <dd>Jusqu'à une dizaine de mètres, oui. Au-delà, ou si l'arbre est près d'une ligne électrique, on passe la main à un élagueur grimpeur de Saint-Savin — c'est son métier, pas le nôtre.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<section class="sect">
+  <div class="env">
+    <div class="etiq">Avis</div>
+    <h2>Ce qu'en disent les clients</h2>
+    <div class="avis">
+      <div class="note">
+        <b>4,9</b>
+        <div class="et">★★★★★</div>
+        <span>37 AVIS GOOGLE</span>
+      </div>
+      <div>
+        <p>Après le premier passage, on laisse un carton avec un QR code dans la boîte aux lettres. Vous scannez, deux lignes suffisent. Et si quelque chose ne va pas, le même code permet de nous le dire directement — autant qu'on répare avant que ça se voie en ligne.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="env">
+    <div class="etiq">Contact</div>
+    <h2>Demander un devis</h2>
+    <div class="c-grille">
+      <div>
+        <a class="c-tel" href="tel:+33557000003">05 57 00 00 03</a>
+        <p class="c-note">On est dehors toute la journée. Laissez un message si ça ne répond pas, on rappelle le soir entre 18 h et 20 h.</p>
+        <p class="c-note">22 chemin des Vergers, 33710 Bourg-sur-Gironde</p>
+      </div>
+      <div class="zone">
+        <div><b>Zone d'intervention</b></div>
+        <div>Bourg, Tauriac, Prignac-et-Marcamps, Pugnac</div>
+        <div>Lansac, Teuillac, Saint-Trojan, Comps</div>
+        <div>Blaye et Saint-André-de-Cubzac sur devis</div>
+        <div><b>Visite gratuite</b> avant tout devis, sans engagement</div>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <p class="footer-note">Vert Jardin Création est un site fictif de démonstration. Modèle réalisé par <a href="https://novaspot.fr" target="_blank">NovaSpot</a>, l'agence digitale des commerces et artisans locaux.</p>
+  <div class="env">
+    Vert Jardin Création — 22 chemin des Vergers, 33710 Bourg-sur-Gironde · SIRET 000 000 000 00000<br/>
+    Site de démonstration réalisé par <a href="https://novaspot.fr" target="_blank" rel="noopener">NovaSpot</a>. Informations fictives.
+  </div>
 </footer>
 
-<script>
-document.getElementById('burger').addEventListener('click',()=>document.getElementById('nLinks').classList.toggle('open'));
-document.querySelectorAll('#nLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nLinks').classList.remove('open')));
-
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');obs.unobserve(e.target);}});},{threshold:.1});
-document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe(el));
-
-const stars=document.querySelectorAll('.avis-star');
-const posBox=document.getElementById('avisPositive');
-const negBox=document.getElementById('avisNegative');
-stars.forEach(star=>{
-  star.addEventListener('mouseenter',()=>{
-    const v=+star.dataset.v;
-    stars.forEach(s=>s.classList.toggle('hovered',+s.dataset.v<=v));
-  });
-  star.addEventListener('mouseleave',()=>{
-    stars.forEach(s=>s.classList.remove('hovered'));
-  });
-  star.addEventListener('click',()=>{
-    const v=+star.dataset.v;
-    posBox.classList.remove('show');
-    negBox.classList.remove('show');
-    if(v>=4){posBox.classList.add('show');} else {negBox.classList.add('show');}
-  });
-});
-</script>
 </body>
 </html>
