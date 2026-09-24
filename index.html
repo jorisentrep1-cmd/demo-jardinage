@@ -93,7 +93,8 @@ img{max-width:100%;display:block}
 .demo a{color:var(--sur-foret);font-weight:600}
 .demo b{color:var(--sur-foret)}
 
-.barre{position:absolute;top:0;left:0;right:0;z-index:20;background:rgba(14,22,16,.70);padding-block:.9rem}
+.barre{position:sticky;top:0;left:0;right:0;z-index:40;background:rgba(14,22,16,.70);padding-block:.9rem;transition:background .25s ease}
+.barre.fixe{background:rgba(14,22,16,.96);box-shadow:0 1px 0 rgba(241,243,238,.16)}
 .b-in{display:flex;align-items:center;gap:1.5rem;min-height:2.6rem}
 .b-marque{font-family:'Fraunces',serif;font-size:1.36rem;color:#F1F3EE;text-decoration:none;line-height:1.05;flex-shrink:0}
 .b-marque small{display:block;font-family:'Work Sans',sans-serif;font-size:.56rem;font-weight:600;
@@ -102,6 +103,7 @@ img{max-width:100%;display:block}
 .b-liens a{font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--sur-photo-doux);
   text-decoration:none;padding-block:.3rem;border-bottom:1px solid transparent}
 .b-liens a:hover{color:#F1F3EE;border-bottom-color:#F1F3EE}
+.b-liens a.actif{color:#F1F3EE;border-bottom-color:#F1F3EE}
 .b-tel{font-size:.7rem;font-weight:600;letter-spacing:.11em;text-transform:uppercase;border:1px solid var(--sur-photo-doux);
   color:#F1F3EE;text-decoration:none;padding:.72rem 1.2rem;white-space:nowrap}
 .b-tel:hover{background:#F1F3EE;color:#141C16}
@@ -110,7 +112,7 @@ img{max-width:100%;display:block}
 @media(max-width:520px){.env{padding-inline:1.2rem}.b-in{gap:.7rem}.b-marque{font-size:1.14rem}.b-tel{padding:.62rem .95rem}}
 
 /* --- ouverture --- */
-.ouverture{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.ouverture{position:relative;min-height:calc(100svh - 3.9rem);display:flex;align-items:flex-end;overflow:hidden;margin-top:-3.9rem;padding-top:3.9rem}
 .ouverture > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .ouv-txt{position:relative;z-index:2;width:100%;padding-block:4.5rem 5rem;
   background:linear-gradient(to top,rgba(14,22,16,.88),rgba(14,22,16,.68))}
@@ -213,9 +215,7 @@ footer a{color:var(--encre)}
 
 <div class="demo"><b>Exemple</b> — site de démonstration réalisé par NovaSpot · <a href="https://novaspot.fr" target="_blank" rel="noopener">novaspot.fr</a></div>
 
-<header class="ouverture" id="haut">
-  <img src="/img/j-allee.jpg" alt="Allée engazonnée entre deux haies taillées" width="1600" height="1067" fetchpriority="high"/>
-  <nav class="barre" aria-label="Accès rapide">
+<nav class="barre" aria-label="Accès rapide">
     <div class="env b-in">
       <a class="b-marque" href="#haut">Vert Jardin<small>Bourg-sur-Gironde</small></a>
       <div class="b-liens">
@@ -228,6 +228,10 @@ footer a{color:var(--encre)}
       <a class="b-tel" href="tel:+33557000003"><span class="b-long">05 57 00 00 03</span><span class="b-court">Appeler</span></a>
     </div>
   </nav>
+
+<header class="ouverture" id="haut">
+  <img src="/img/j-allee.jpg" alt="Allée engazonnée entre deux haies taillées" width="1500" height="1000" fetchpriority="high"/>
+  
   <div class="ouv-txt">
     <div class="env">
       <div class="etiq">Entretien · Création · Élagage</div>
@@ -249,19 +253,19 @@ footer a{color:var(--encre)}
 
     <div class="jardins">
       <figure class="jardin j-large">
-        <img src="/img/j-massif.jpg" alt="Allée de briques bordée de massifs fleuris" width="1300" height="867" loading="lazy" decoding="async"/>
+        <img src="/img/j-massif.jpg" alt="Allée de briques bordée de massifs fleuris" width="1200" height="800" loading="lazy" decoding="async"/>
         <figcaption><b>Massifs et allée pavée</b>Tauriac · entretien mensuel depuis 2021</figcaption>
       </figure>
       <figure class="jardin j-etroit">
-        <img src="/img/j-haies.jpg" alt="Haie taillée au carré" width="1300" height="1733" loading="lazy" decoding="async"/>
+        <img src="/img/j-haies.jpg" alt="Haie taillée au carré" width="800" height="533" loading="lazy" decoding="async"/>
         <figcaption><b>Charmille, 40 mètres</b>Pugnac · deux tailles par an</figcaption>
       </figure>
       <figure class="jardin j-demi">
-        <img src="/img/j-terrasse.jpg" alt="Terrasse pavée et muret de pierre" width="1300" height="867" loading="lazy" decoding="async"/>
+        <img src="/img/j-terrasse.jpg" alt="Terrasse pavée et muret de pierre" width="1000" height="667" loading="lazy" decoding="async"/>
         <figcaption><b>Terrasse et muret</b>Lansac · création, printemps 2025</figcaption>
       </figure>
       <figure class="jardin j-demi">
-        <img src="/img/j-sentier.jpg" alt="Pelouse tondue bordée d'arbustes" width="1300" height="867" loading="lazy" decoding="async"/>
+        <img src="/img/j-sentier.jpg" alt="Pelouse tondue bordée d'arbustes" width="1000" height="1333" loading="lazy" decoding="async"/>
         <figcaption><b>Pelouse et arbustes</b>Prignac-et-Marcamps · tonte d'avril à octobre</figcaption>
       </figure>
     </div>
@@ -339,7 +343,7 @@ footer a{color:var(--encre)}
 </section>
 
 <section class="contact" id="contact">
-  <img src="/img/j-topiaire.jpg" alt="Jardin entretenu, topiaires et marches de pierre" width="1100" height="733" loading="lazy" decoding="async"/>
+  <img src="/img/j-topiaire.jpg" alt="Jardin entretenu, topiaires et marches de pierre" width="1200" height="800" loading="lazy" decoding="async"/>
   <div class="c-voile">
     <div class="env">
       <div class="etiq">Demander un devis</div>
@@ -382,6 +386,39 @@ footer a{color:var(--encre)}
     try{ localStorage.setItem("ns-theme", t); }catch(e){}
     peindre(t);
   });
+})();
+</script>
+
+<script>
+/* Barre verrouillee et reperage de section.
+   - .fixe : fond plus opaque des qu'on a quitte le haut de page.
+   - .actif : le lien de la section qu'on est en train de lire.
+   Tout est en supplement : sans JavaScript la barre reste collante
+   (c'est du CSS) et les liens fonctionnent normalement. */
+(function(){
+  var barre = document.querySelector('.barre');
+  if(barre){
+    var marquer = function(){ barre.classList.toggle('fixe', window.scrollY > 24); };
+    marquer();
+    addEventListener('scroll', marquer, {passive:true});
+  }
+  var liens = [].slice.call(document.querySelectorAll('.b-liens a[href^="#"]'));
+  if(!liens.length || !('IntersectionObserver' in window)) return;
+  var parSection = {};
+  liens.forEach(function(a){
+    var id = a.getAttribute('href').slice(1);
+    var s = document.getElementById(id);
+    if(s) parSection[id] = a;
+  });
+  var vues = {};
+  var obs = new IntersectionObserver(function(entrees){
+    entrees.forEach(function(e){ vues[e.target.id] = e.isIntersecting ? e.intersectionRatio : 0; });
+    var meilleur = null, score = 0;
+    Object.keys(vues).forEach(function(id){ if(vues[id] > score){ score = vues[id]; meilleur = id; } });
+    liens.forEach(function(a){ a.classList.remove('actif'); });
+    if(meilleur && parSection[meilleur]) parSection[meilleur].classList.add('actif');
+  }, {rootMargin:'-20% 0px -60% 0px', threshold:[0,.25,.5,1]});
+  Object.keys(parSection).forEach(function(id){ obs.observe(document.getElementById(id)); });
 })();
 </script>
 </body>
