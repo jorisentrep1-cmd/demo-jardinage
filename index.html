@@ -93,33 +93,34 @@ img{max-width:100%;display:block}
 .demo a{color:var(--sur-foret);font-weight:600}
 .demo b{color:var(--sur-foret)}
 
-.barre{position:sticky;top:0;z-index:20;background:var(--papier);border-bottom:1px solid var(--trait);padding-block:.8rem}
+.barre{position:absolute;top:0;left:0;right:0;z-index:20;background:rgba(14,22,16,.70);padding-block:.9rem}
 .b-in{display:flex;align-items:center;gap:1.5rem;min-height:2.6rem}
-.b-marque{font-family:'Fraunces',serif;font-size:1.36rem;color:var(--encre);text-decoration:none;line-height:1.05;flex-shrink:0}
+.b-marque{font-family:'Fraunces',serif;font-size:1.36rem;color:#F1F3EE;text-decoration:none;line-height:1.05;flex-shrink:0}
 .b-marque small{display:block;font-family:'Work Sans',sans-serif;font-size:.56rem;font-weight:600;
-  letter-spacing:.28em;text-transform:uppercase;color:var(--mousse);margin-top:.2rem}
+  letter-spacing:.28em;text-transform:uppercase;color:var(--sur-photo-doux);margin-top:.2rem}
 .b-liens{display:flex;gap:1.6rem;margin-left:auto}
-.b-liens a{font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--encre-doux);
+.b-liens a{font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--sur-photo-doux);
   text-decoration:none;padding-block:.3rem;border-bottom:1px solid transparent}
-.b-liens a:hover{color:var(--encre);border-bottom-color:var(--encre)}
-.b-tel{font-size:.7rem;font-weight:600;letter-spacing:.11em;text-transform:uppercase;border:1px solid var(--encre);
-  color:var(--encre);text-decoration:none;padding:.72rem 1.2rem;white-space:nowrap}
-.b-tel:hover{background:var(--encre);color:var(--papier)}
+.b-liens a:hover{color:#F1F3EE;border-bottom-color:#F1F3EE}
+.b-tel{font-size:.7rem;font-weight:600;letter-spacing:.11em;text-transform:uppercase;border:1px solid var(--sur-photo-doux);
+  color:#F1F3EE;text-decoration:none;padding:.72rem 1.2rem;white-space:nowrap}
+.b-tel:hover{background:#F1F3EE;color:#141C16}
 .b-court{display:none}
 @media(max-width:940px){.b-liens{display:none}.b-long{display:none}.b-court{display:inline}}
 @media(max-width:520px){.env{padding-inline:1.2rem}.b-in{gap:.7rem}.b-marque{font-size:1.14rem}.b-tel{padding:.62rem .95rem}}
 
-/* --- ouverture : l'image d'abord, le titre dessous. Jamais de texte
-       pose sur la photo -- c'est ce que font les portfolios de
-       paysagistes, ou l'image n'a pas a porter de legende. --- */
-.vue-large img{width:100%;height:clamp(300px,54vw,640px);object-fit:cover;display:block}
-.titrage{padding-block:clamp(2.6rem,6vw,4.4rem) clamp(2.4rem,5vw,3.6rem);border-bottom:1px solid var(--trait)}
-.titrage .etiq{display:block;margin-bottom:1.3rem}
-.titrage h1{font-size:clamp(2.1rem,6vw,4.4rem);line-height:1.04;font-weight:300;max-width:17ch}
-.titrage h1 em{font-style:italic}
-.t-pied{display:flex;flex-wrap:wrap;gap:.5rem 3.2rem;margin-top:clamp(1.8rem,4vw,2.8rem);padding-top:1.3rem;
-  border-top:2px solid var(--encre);font-size:.85rem;color:var(--mousse)}
-.t-pied b{color:var(--encre);font-weight:600}
+/* --- ouverture --- */
+.ouverture{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.ouverture > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ouv-txt{position:relative;z-index:2;width:100%;padding-block:4.5rem 5rem;
+  background:linear-gradient(to top,rgba(14,22,16,.88),rgba(14,22,16,.68))}
+.ouv-txt .etiq{color:var(--seve-photo)}
+.ouverture h1{font-size:clamp(2.2rem,5.4vw,4rem);color:var(--sur-photo);max-width:18ch;margin-top:1rem;line-height:1.08;font-weight:300}
+.ouverture h1 em{font-style:italic}
+.ouv-pied{display:flex;flex-wrap:wrap;gap:.4rem 2.5rem;margin-top:2rem;padding-top:1.2rem;
+  border-top:1px solid rgba(241,243,238,.3);font-size:.83rem;color:var(--sur-photo-doux)}
+.ouv-pied b{color:var(--sur-photo);font-weight:600}
+@media(max-width:700px){.ouverture{min-height:86svh}.ouv-txt{padding-block:3.2rem 3rem}}
 
 .sect{padding-block:4.8rem}
 h2{font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:1.1;margin-top:.7rem;font-weight:300}
@@ -202,8 +203,8 @@ footer{background:var(--papier);color:var(--mousse);font-size:.76rem;padding-blo
 footer a{color:var(--encre)}
 
 .b-theme{display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;padding:0;
-  flex-shrink:0;cursor:pointer;background:none;color:var(--mousse);border:1px solid currentColor;border-radius:99px;opacity:.8}
-.b-theme:hover{opacity:1;color:var(--encre)}
+  flex-shrink:0;cursor:pointer;background:none;color:var(--sur-photo-doux);border:1px solid currentColor;border-radius:99px;opacity:.85}
+.b-theme:hover{opacity:1;color:var(--sur-photo)}
 
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
@@ -212,32 +213,30 @@ footer a{color:var(--encre)}
 
 <div class="demo"><b>Exemple</b> — site de démonstration réalisé par NovaSpot · <a href="https://novaspot.fr" target="_blank" rel="noopener">novaspot.fr</a></div>
 
-<nav class="barre" aria-label="Accès rapide">
-  <div class="env b-in">
-    <a class="b-marque" href="#haut">Vert Jardin<small>Bourg-sur-Gironde</small></a>
-    <div class="b-liens">
-      <a href="#jardins">Les jardins</a>
-      <a href="#saisons">L'année</a>
-      <a href="#tarifs">Tarifs</a>
-      <a href="#avis">Avis</a>
-    </div>
-    <button class="b-theme" type="button" aria-label="Passer en thème sombre"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"></svg></button>
-    <a class="b-tel" href="tel:+33557000003"><span class="b-long">05 57 00 00 03</span><span class="b-court">Appeler</span></a>
-  </div>
-</nav>
-
-<figure class="vue-large" id="haut">
+<header class="ouverture" id="haut">
   <img src="/img/j-allee.jpg" alt="Allée engazonnée entre deux haies taillées" width="1600" height="1067" fetchpriority="high"/>
-</figure>
-
-<header class="titrage">
-  <div class="env">
-    <span class="etiq">Entretien · Création · Élagage</span>
-    <h1>Un jardin, ça ne se travaille pas <em>douze mois sur douze.</em></h1>
-    <div class="t-pied">
-      <span><b>Bourg-sur-Gironde</b> et la Haute-Gironde</span>
-      <span>Huit à dix passages par an</span>
-      <span><b>4,9</b> ★★★★★ · 37 avis</span>
+  <nav class="barre" aria-label="Accès rapide">
+    <div class="env b-in">
+      <a class="b-marque" href="#haut">Vert Jardin<small>Bourg-sur-Gironde</small></a>
+      <div class="b-liens">
+        <a href="#jardins">Les jardins</a>
+        <a href="#saisons">L'année</a>
+        <a href="#tarifs">Tarifs</a>
+        <a href="#avis">Avis</a>
+      </div>
+      <button class="b-theme" type="button" aria-label="Passer en thème sombre"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"></svg></button>
+      <a class="b-tel" href="tel:+33557000003"><span class="b-long">05 57 00 00 03</span><span class="b-court">Appeler</span></a>
+    </div>
+  </nav>
+  <div class="ouv-txt">
+    <div class="env">
+      <div class="etiq">Entretien · Création · Élagage</div>
+      <h1>Un jardin, ça ne se travaille pas <em>douze mois sur douze.</em></h1>
+      <div class="ouv-pied">
+        <span><b>Bourg-sur-Gironde</b> et la Haute-Gironde</span>
+        <span>Huit à dix passages par an</span>
+        <span><b>4,9</b> ★★★★★ · 37 avis</span>
+      </div>
     </div>
   </div>
 </header>
