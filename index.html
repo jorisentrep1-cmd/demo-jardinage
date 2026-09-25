@@ -80,8 +80,11 @@
 
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:4rem}
+/* Base de lecture : 1rem = 17 px, texte courant a 16 px. Les clients de ces
+   artisans lisent souvent sur telephone, et pas tous avec de bons yeux. */
+html{font-size:106.25%}
 body{background:var(--papier);color:var(--encre-doux);font-family:'Work Sans',system-ui,sans-serif;
-  font-size:15px;line-height:1.62;-webkit-font-smoothing:antialiased}
+  font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
 h1,h2,h3,.fra{font-family:'Fraunces',Georgia,serif;color:var(--encre);font-weight:400;letter-spacing:-.01em}
 a{color:var(--encre)}
 :focus-visible{outline:2px solid var(--focus);outline-offset:3px}
