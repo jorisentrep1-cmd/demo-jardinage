@@ -122,6 +122,10 @@ img{max-width:100%;display:block}
 .ouv-txt .etiq{color:var(--seve-photo)}
 .ouverture h1{font-size:clamp(2.2rem,5.4vw,4rem);color:var(--sur-photo);max-width:18ch;margin-top:1rem;line-height:1.08;font-weight:300}
 .ouverture h1 em{font-style:italic}
+.ouv-sous{color:var(--sur-photo-doux);margin-top:1.1rem;max-width:50ch;font-size:.97rem}
+.ouv-action{display:inline-block;margin-top:1.7rem;font-size:.72rem;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;background:var(--seve-photo);color:#141C16;text-decoration:none;padding:1rem 1.9rem}
+.ouv-action:hover{background:#F1F3EE}
 .ouv-pied{display:flex;flex-wrap:wrap;gap:.4rem 2.5rem;margin-top:2rem;padding-top:1.2rem;
   border-top:1px solid rgba(241,243,238,.3);font-size:.83rem;color:var(--sur-photo-doux)}
 .ouv-pied b{color:var(--sur-photo);font-weight:600}
@@ -233,12 +237,14 @@ footer a{color:var(--encre)}
   </nav>
 
 <header class="ouverture" id="haut">
-  <img src="/img/j-allee.jpg" alt="Allée engazonnée entre deux haies taillées" width="1500" height="1000" fetchpriority="high"/>
+  <img src="/img/j-allee.jpg" srcset="/img/j-allee-m.jpg 1000w, /img/j-allee.jpg 1500w" sizes="(max-width:700px) 330px, 100vw" alt="Allée engazonnée entre deux haies taillées" width="1500" height="1000" fetchpriority="high"/>
   
   <div class="ouv-txt">
     <div class="env">
       <div class="etiq">Entretien · Création · Élagage</div>
       <h1>Un jardin, ça ne se travaille pas <em>douze mois sur douze.</em></h1>
+      <p class="ouv-sous">On vient quand le jardin en a besoin, pas tous les mois. Le calendrier est fixé en janvier, et on vous prévient la veille de chaque passage.</p>
+      <a class="ouv-action" href="#contact">Demander une visite gratuite</a>
       <div class="ouv-pied">
         <span><b>Bourg-sur-Gironde</b> et la Haute-Gironde</span>
         <span>Huit à dix passages par an</span>
@@ -295,12 +301,12 @@ footer a{color:var(--encre)}
       <div class="saison">
         <div class="s-nom">Été</div>
         <div class="s-quand">Juillet · août</div>
-        <p class="s-txt">L'herbe ralentit : on tond plus haut et moins souvent. Une pelouse rase en juillet grille. En août, souvent rien à faire.</p>
+        <p class="s-txt">L'herbe ralentit : on tond plus haut et moins souvent. Une pelouse rase en juillet grille. En août, souvent rien à faire.</p>
       </div>
       <div class="saison">
         <div class="s-nom">Automne</div>
         <div class="s-quand">Septembre · octobre</div>
-        <p class="s-txt">Reprise après les pluies, dernière tonte, feuilles. La terre est encore chaude : c'est le moment de planter les arbustes.</p>
+        <p class="s-txt">Reprise après les pluies, dernière tonte, feuilles. La terre est encore chaude : c'est le moment de planter les arbustes.</p>
       </div>
     </div>
     <p class="s-pied">On ne vend pas d'abonnement mensuel pour venir tondre en janvier. Vous payez les passages qui ont lieu, et vous savez d'avance lesquels.</p>
@@ -320,7 +326,7 @@ footer a{color:var(--encre)}
     </div>
     <div class="fisc">
       <h3>50 % de crédit d'impôt sur l'entretien</h3>
-      <p>Entreprise déclarée services à la personne : <b>la moitié de ce que vous payez vous est rendue</b>, dans la limite de 5 000 € par an et par foyer. Une tonte à 45 € vous coûte donc 22,50 €.</p>
+      <p>Entreprise déclarée services à la personne : <b>la moitié de ce que vous payez vous est rendue</b>, dans la limite de 5 000 € par an et par foyer. Une tonte à 45 € vous coûte donc 22,50 €.</p>
       <p class="reserve">Ça ne vaut que pour l'entretien. Une création de jardin n'y ouvre pas droit, et on vous le dit au devis, pas à la déclaration.</p>
     </div>
   </div>
@@ -335,7 +341,7 @@ footer a{color:var(--encre)}
     </div>
     <div>
       <div class="etiq">Votre avis</div>
-      <h2>On vient de passer chez vous ?</h2>
+      <h2>On vient de passer chez vous ?</h2>
       <p>Un carton avec un QR code est laissé dans la boîte aux lettres après le premier passage. Il mène ici. Si le jardin vous plaît, deux lignes sur Google aident le voisin à choisir. Si quelque chose ne va pas, dites-le-nous directement — on préfère le rattraper au passage suivant.</p>
       <div class="chemins">
         <a class="chemin plein" href="https://search.google.com/local/writereview?placeid=PLACE_ID_DU_CLIENT" target="_blank" rel="noopener">Laisser un avis Google</a>
