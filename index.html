@@ -129,7 +129,13 @@ img{max-width:100%;display:block}
 .ouv-pied{display:flex;flex-wrap:wrap;gap:.4rem 2.5rem;margin-top:2rem;padding-top:1.2rem;
   border-top:1px solid rgba(241,243,238,.3);font-size:.83rem;color:var(--sur-photo-doux)}
 .ouv-pied b{color:var(--sur-photo);font-weight:600}
-@media(max-width:700px){.ouverture{min-height:86svh}.ouv-txt{padding-block:3.2rem 3rem}}
+/* Sur telephone, le voile couvrait presque toute la photo : l'allee d'abord,
+   le texte ensuite sur fond plein, avec un fondu pour passer de l'un a l'autre. */
+@media(max-width:700px){
+  .ouverture{display:block;min-height:0}
+  .ouverture > img{height:calc(3.9rem + 40svh + 4rem);bottom:auto}
+  .ouv-txt{margin-top:40svh;padding-block:4rem 2.8rem;background:linear-gradient(to bottom,rgba(18,28,20,0),#121C14 4rem)}
+}
 
 .sect{padding-block:4.8rem}
 h2{font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:1.1;margin-top:.7rem;font-weight:300}
