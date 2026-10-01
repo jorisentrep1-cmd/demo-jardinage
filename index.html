@@ -5,12 +5,26 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Vert Jardin Création — Paysagiste à Bourg-sur-Gironde</title>
 <meta name="description" content="Entretien de jardin, taille et élagage en Haute-Gironde. Les jardins qu'on entretient, l'année en quatre saisons, et 50 % de crédit d'impôt."/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:url" content="https://demo-jardinage.novaspot.fr/"/>
+<meta property="og:title" content="Vert Jardin Création — Paysagiste à Bourg-sur-Gironde"/>
+<meta property="og:description" content="Entretien de jardin, taille et élagage en Haute-Gironde. Les jardins qu'on entretient, l'année en quatre saisons, et 50 % de crédit d'impôt."/>
+<meta property="og:image" content="https://novaspot.fr/img/demo-jardinage-v3.jpg"/>
+<meta property="og:image:width" content="800"/>
+<meta property="og:image:height" content="500"/>
+<meta name="twitter:card" content="summary_large_image"/>
 <meta name="robots" content="noindex,nofollow"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
 <script>try{var t=localStorage.getItem("ns-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <style>
+/* Polices servies par le site lui-meme (sous-ensemble latin) : aucune requete vers Google. */
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:300;font-display:swap;src:url(/fonts/fraunces-9e509503.woff2) format('woff2')}
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/fraunces-9e509503.woff2) format('woff2')}
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/fraunces-9e509503.woff2) format('woff2')}
+@font-face{font-family:'Work Sans';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/work-sans-a9e8928e.woff2) format('woff2')}
+@font-face{font-family:'Work Sans';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/work-sans-a9e8928e.woff2) format('woff2')}
+@font-face{font-family:'Work Sans';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/work-sans-a9e8928e.woff2) format('woff2')}
+
 /* ---------------------------------------------------------------
    Registre portfolio, releve sur les paysagistes les mieux notes :
    Mark Tessier tient en 30 mots et 73 % d'image. On montre les
@@ -268,19 +282,19 @@ footer a{color:var(--encre)}
 
     <div class="jardins">
       <figure class="jardin j-large">
-        <img src="/img/j-massif.jpg" alt="Allée de briques bordée de massifs fleuris" width="1200" height="800" loading="lazy" decoding="async"/>
+        <img src="/img/j-massif.jpg" srcset="/img/j-massif-500.jpg 500w, /img/j-massif.jpg 1200w" sizes="(max-width:700px) 45vw, 791px" alt="Allée de briques bordée de massifs fleuris" width="1200" height="800" loading="lazy" decoding="async"/>
         <figcaption><b>Massifs et allée pavée</b>Tauriac · entretien mensuel depuis 2021</figcaption>
       </figure>
       <figure class="jardin j-etroit">
-        <img src="/img/j-haies.jpg" alt="Haie taillée au carré" width="800" height="533" loading="lazy" decoding="async"/>
+        <img src="/img/j-haies.jpg" srcset="/img/j-haies-400.jpg 400w, /img/j-haies.jpg 800w" sizes="(max-width:700px) 45vw, 384px" alt="Haie taillée au carré" width="800" height="533" loading="lazy" decoding="async"/>
         <figcaption><b>Charmille, 40 mètres</b>Pugnac · deux tailles par an</figcaption>
       </figure>
       <figure class="jardin j-demi">
-        <img src="/img/j-terrasse.jpg" alt="Terrasse pavée et muret de pierre" width="1000" height="667" loading="lazy" decoding="async"/>
+        <img src="/img/j-terrasse.jpg" srcset="/img/j-terrasse-500.jpg 500w, /img/j-terrasse.jpg 1000w" sizes="(max-width:700px) 45vw, 588px" alt="Terrasse pavée et muret de pierre" width="1000" height="667" loading="lazy" decoding="async"/>
         <figcaption><b>Terrasse et muret</b>Lansac · création, printemps 2025</figcaption>
       </figure>
       <figure class="jardin j-demi">
-        <img src="/img/j-sentier.jpg" alt="Pelouse tondue bordée d'arbustes" width="1000" height="1333" loading="lazy" decoding="async"/>
+        <img src="/img/j-sentier.jpg" srcset="/img/j-sentier-500.jpg 500w, /img/j-sentier.jpg 1000w" sizes="(max-width:700px) 45vw, 588px" alt="Pelouse tondue bordée d'arbustes" width="1000" height="1333" loading="lazy" decoding="async"/>
         <figcaption><b>Pelouse et arbustes</b>Prignac-et-Marcamps · tonte d'avril à octobre</figcaption>
       </figure>
     </div>
@@ -324,15 +338,15 @@ footer a{color:var(--encre)}
     <div>
       <div class="etiq">Tarifs</div>
       <h2>Ce que coûte chaque passage</h2>
-      <div class="lp"><div><span class="lp-nom">Tonte &amp; entretien</span><span class="lp-det">Tonte, bordures, soufflage des allées</span></div><div class="lp-prix">dès 45 €</div></div>
-      <div class="lp"><div><span class="lp-nom">Taille de haies</span><span class="lp-det">Au mètre linéaire, évacuation comprise</span></div><div class="lp-prix">dès 6 €/ml</div></div>
-      <div class="lp"><div><span class="lp-nom">Élagage</span><span class="lp-det">Par arbre, selon hauteur et accès</span></div><div class="lp-prix">dès 150 €</div></div>
-      <div class="lp"><div><span class="lp-nom">Ramassage des feuilles</span><span class="lp-det">Terrain jusqu'à 1 000 m²</span></div><div class="lp-prix">dès 60 €</div></div>
+      <div class="lp"><div><span class="lp-nom">Tonte &amp; entretien</span><span class="lp-det">Tonte, bordures, soufflage des allées</span></div><div class="lp-prix">dès 45 €</div></div>
+      <div class="lp"><div><span class="lp-nom">Taille de haies</span><span class="lp-det">Au mètre linéaire, évacuation comprise</span></div><div class="lp-prix">dès 6 €/ml</div></div>
+      <div class="lp"><div><span class="lp-nom">Élagage</span><span class="lp-det">Par arbre, selon hauteur et accès</span></div><div class="lp-prix">dès 150 €</div></div>
+      <div class="lp"><div><span class="lp-nom">Ramassage des feuilles</span><span class="lp-det">Terrain jusqu'à 1 000 m²</span></div><div class="lp-prix">dès 60 €</div></div>
       <div class="lp"><div><span class="lp-nom">Création, aménagement</span><span class="lp-det">Terrasse, allée, massif, clôture végétale</span></div><div class="lp-prix">sur devis</div></div>
     </div>
     <div class="fisc">
-      <h3>50 % de crédit d'impôt sur l'entretien</h3>
-      <p>Entreprise déclarée services à la personne : <b>la moitié de ce que vous payez vous est rendue</b>, dans la limite de 5 000 € par an et par foyer. Une tonte à 45 € vous coûte donc 22,50 €.</p>
+      <h3>50 % de crédit d'impôt sur l'entretien</h3>
+      <p>Entreprise déclarée services à la personne : <b>la moitié de ce que vous payez vous est rendue</b>, dans la limite de 5 000 € par an et par foyer. Une tonte à 45 € vous coûte donc 22,50 €.</p>
       <p class="reserve">Ça ne vaut que pour l'entretien. Une création de jardin n'y ouvre pas droit, et on vous le dit au devis, pas à la déclaration.</p>
     </div>
   </div>
@@ -363,7 +377,7 @@ footer a{color:var(--encre)}
     <div class="env">
       <div class="etiq">Demander un devis</div>
       <a class="c-tel" href="tel:+33557000003">05 57 00 00 03</a>
-      <p class="c-note">On est dehors toute la journée. Laissez un message si ça ne répond pas, on rappelle entre 18 h et 20 h.</p>
+      <p class="c-note">On est dehors toute la journée. Laissez un message si ça ne répond pas, on rappelle entre 18 h et 20 h.</p>
       <div class="c-bas">
         <span><b>Vert Jardin Création</b> — 22 chemin des Vergers, 33710 Bourg-sur-Gironde</span>
         <span>Visite gratuite avant tout devis</span>
@@ -465,6 +479,23 @@ footer a{color:var(--encre)}
   addEventListener('load', planifier);
   reperer();
 })();
+</script>
+<script>
+/* Demo : le bouton d'avis pointe vers une fiche Google qui n'existe pas encore.
+   Sur le site d'un client, PLACE_ID_DU_CLIENT est remplace par sa vraie fiche
+   et ce script ne trouve plus rien a faire. */
+document.querySelectorAll('a[href*="PLACE_ID_DU_CLIENT"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    e.preventDefault();
+    var boite = a.parentNode, n = boite.querySelector('.note-demo');
+    if(n) return;
+    n = document.createElement('p');
+    n.className = 'note-demo'; n.setAttribute('role', 'status');
+    n.style.cssText = 'flex-basis:100%;width:100%;margin:.9rem 0 0;font-size:.92rem;line-height:1.5;color:inherit;opacity:1';
+    n.textContent = 'Exemple\u00a0: sur votre site, ce bouton ouvre directement votre fiche Google, prête à recevoir l\'avis.';
+    boite.appendChild(n);
+  });
+});
 </script>
 </body>
 </html>
